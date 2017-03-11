@@ -1,0 +1,11 @@
+<h1>Home welcome</h1>
+<p id="notice" %></p>
+<p>Find me in app/views/home/welcome.html.erb</p>
+<%if !current_user.nil? %>
+<%= " Benvenuto " + current_user.email%>
+<p><%= link_to 'Le stazioni di BeMISecure', stations_path %></p>
+<p> <%= link_to('Esci', destroy_user_session_path, :method => :delete) %></p>
+<% else %>
+<p><%= link_to 'Accedi', new_user_session_path %></p>
+<p><%= link_to 'Registrati', new_user_registration_path %></p>
+<% end %>
