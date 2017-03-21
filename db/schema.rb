@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170114161144) do
+ActiveRecord::Schema.define(version: 20170211155908) do
 
   create_table "chains", force: :cascade do |t|
     t.string   "status"
@@ -19,10 +19,6 @@ ActiveRecord::Schema.define(version: 20170114161144) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
-end 
-
-# It's strongly recommended that you check this file into your version control system
-ActiveRecord::Schema.define(version: 20170114160700) do
 
   create_table "stations", force: :cascade do |t|
     t.integer  "position"
@@ -35,27 +31,27 @@ ActiveRecord::Schema.define(version: 20170114160700) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
-end 
-ActiveRecord::Schema.define(version: 20170114160026) do
- 
-  create_table "chains", force: :cascade do |t|
-    t.string   "status"
-    t.string   "model"
-    t.integer  "securityLevel"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-
-  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "surname"
     t.date     "birthdate"
     t.string   "phonenumber"
-    t.string   "email"
     t.string   "password"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end
