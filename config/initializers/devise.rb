@@ -8,6 +8,8 @@ Devise.setup do |config|
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '744b2beece3f1278c029e7281ef25429597672b236f3c034ad6c0e6f6c452c27c4370fd0f5c91ece5b6cfb9d41b52da7d39c0f505d44867752b7f2a76cef3100'
 
+  # config.secret_key = 'dc4a242c237ec4085efce3544393ace625b61eef8d17397239221928840d33b83ba9a79b0a022a807ba7581562d077001b87f75f59578869c010ef3c20deaa5d'
+
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
@@ -221,6 +223,7 @@ Devise.setup do |config|
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
    config.scoped_views = true
+
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
