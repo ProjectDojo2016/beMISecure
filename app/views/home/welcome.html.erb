@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1>Benvenuto su BeMiSecure </h1>
 <p id="notice"><%=notice%></p>
 <p>Find me in app/views/home/welcome.html.erb</p>
@@ -9,3 +10,17 @@
 <p><%=link_to'Accedi',new_user_session_path %></p>
 <p><%=link_to'Regisrati',new_user_registration_path %></p>
 <%end%>
+=======
+<h1>Home#welcome</h1>
+<p id="notice"><%= notice %></p>
+<p>Find me in app/views/home/welcome.html.erb</p>
+<% if !current_user.nil? %>
+<%=    "benvenuto " + current_user.name + " " + current_user.surname + " (" + current_user.email + ")" %>
+<p>  <%= link_to('Modifica profilo', edit_user_registration_path) %></p>
+<p><%= link_to 'Le stazioni di BeMISecure', stations_path %></p>
+<p>  <%= link_to('Esci', destroy_user_session_path, :method => :delete) %></p>
+<% else %>
+<p><%= link_to 'Accedi', new_user_session_path %></p>
+<p><%= link_to 'Registrati', new_user_registration_path %></p>
+<% end %>
+>>>>>>> b2d1fb7ca65b106c572bb6dc1ec4bcaa58a52e3f

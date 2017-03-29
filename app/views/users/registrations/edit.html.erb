@@ -4,6 +4,26 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label "nome" %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label "cognome" %><br />
+    <%= f.text_field :surname, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label "data di nascita" %><br />
+    <%= f.date_field :birthdate, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Numero di Telefono" %><br />
+    <%= f.text_field :phonenumber, autofocus: true %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
