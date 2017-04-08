@@ -8,6 +8,8 @@ Devise.setup do |config|
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '9a204f4ad48a6e3d5f2c69bb54c7508c5a8009d6fd656887cec038a82bbe4ff5648138a5e5dbeb57613d0c9f4464492751d857038070bfee16fd740e204e532d'
 
+  # config.secret_key = 'dc4a242c237ec4085efce3544393ace625b61eef8d17397239221928840d33b83ba9a79b0a022a807ba7581562d077001b87f75f59578869c010ef3c20deaa5d'
+
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
@@ -109,6 +111,7 @@ Devise.setup do |config|
 
   # Set up a pepper to generate the hashed password.
   # config.pepper = '3c85e90c78a6b4d35eb64e40760593a87f078a11076210f1030bd6e54c1093ea28e69e752f237bd9bc4c7ea45e269f221f4f37d8990debc9db831a6b15f3ac6e'
+  # config.pepper = 'd87fdf4e87ac896f846c2b70a784a1487c35d7e1498203168f8da28065eaac3ed571d8375e4dbcdfc642367cf0a68914ef2ac70ea65443c5bd6bea29adf699cf'
 
   # Send a notification email when the user's password is changed
   # config.send_password_change_notification = false
@@ -221,6 +224,9 @@ Devise.setup do |config|
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
   config.scoped_views = true
+
+  # config.scoped_views = true
+
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
