@@ -1,11 +1,28 @@
-<h1>Home welcome</h1>
+
 <p id="notice" %></p>
-<p>Find me in app/views/home/welcome.html.erb</p>
-<%if !current_user.nil? %>
-<%= " Benvenuto " + current_user.email%>
-<p><%= link_to 'Le stazioni di BeMISecure', stations_path %></p>
-<p> <%= link_to('Esci', destroy_user_session_path, :method => :delete) %></p>
-<% else %>
-<p><%= link_to 'Accedi', new_user_session_path %></p>
-<p><%= link_to 'Registrati', new_user_registration_path %></p>
-<%end%>
+<div class="hero__image">
+ <img src="<%= asset_path "heroimage4.jpg" %>" alt="test" class="img-responsive">
+ <div class="carousel-caption">
+ <h1>chitsiru amene awerenga</h1>
+ <% if current_user.nil? %>
+     <%= link_to'Registrati', new_user_registration_path, class: 'btn btn-primary btn-lg'%>
+ <% end %>
+ </div>
+ </div>
+
+<div class="container-fluid">
+ <div class="row">
+ <div class="col-sm-4">
+ <img src="<%= asset_path "ScambioIdee.jpg" %>" class="img-responsive img-circle">
+ <h3>Come funziona</h3>
+ </div>
+ <div class="col-sm-4">
+ <img src="<%= asset_path "ScambioIdee.jpg" %>" class="img-responsive img-circle">
+ <h3>Chi siamo</h3>
+ </div>
+ <div class="col-sm-4">
+ <img src="<%= asset_path "ScambioIdee.jpg" %>" class="img-responsive img-circle">
+ <h3>Dove siamo</h3>
+ </div>
+ </div>
+ </div>
