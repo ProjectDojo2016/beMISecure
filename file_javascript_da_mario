@@ -28,3 +28,9 @@
     marker[1] = L.marker([51.605,-0.09], {icon: greenIcon}).addTo(leafletMap);
     marker[1].bindPopup('<b>ciao da mario seconda volta</b>')
   <% end %>
+  
+  
+  anemoni 45.454504, 9.129541
+  Duomo 45.463683, 9.190619
+  Lorenteggio 45.448612, 9.133354
+  
