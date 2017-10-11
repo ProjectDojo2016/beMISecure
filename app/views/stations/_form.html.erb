@@ -12,17 +12,17 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :latitudine %>
-    <%= f.number_field :lat, :step=> :any %>
+    <%= f.label "latitudine" %>
+    <%= f.number_field :lat, :step => :any %>
   </div>
-  
-<div class="field">
-    <%= f.label :longitudine %>
-    <%= f.number_field :long, :step=> :any %>
-  </div>
-  
+
   <div class="field">
-    <%= f.label :indirizzo %>
+    <%= f.label "longitudine" %>
+    <%= f.number_field :long,  :step => :any  %>
+  </div>
+
+  <div class="field">
+    <%= f.label "indirizzo" %>
     <%= f.text_field :address %>
   </div>
   
