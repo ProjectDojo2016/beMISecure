@@ -1,0 +1,2 @@
+class Parkingevent < ApplicationRecord
+end

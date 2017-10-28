@@ -1,0 +1,47 @@
+<%= form_for(parking_event) do |f| %>
+  <% if parking_event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(parking_event.errors.count, "error") %> prohibited this parking_event from being saved:</h2>
+
+      <ul>
+      <% parking_event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :parkrequest %>
+    <%= f.datetime_select :parkrequest %>
+  </div>
+
+  <div class="field">
+    <%= f.label :parkallowed %>
+    <%= f.datetime_select :parkallowed %>
+  </div>
+
+  <div class="field">
+    <%= f.label :parkcompleted %>
+    <%= f.text_field :parkcompleted %>
+  </div>
+
+  <div class="field">
+    <%= f.label :datetime %>
+    <%= f.text_field :datetime %>
+  </div>
+
+  <div class="field">
+    <%= f.label :getbikecompleted %>
+    <%= f.text_field :getbikecompleted %>
+  </div>
+
+  <div class="field">
+    <%= f.label :datetime %>
+    <%= f.text_field :datetime %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

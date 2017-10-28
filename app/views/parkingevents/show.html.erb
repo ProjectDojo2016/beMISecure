@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Parkrequest:</strong>
+  <%= @parkingevent.parkrequest %>
+</p>
+
+<p>
+  <strong>Datetime:</strong>
+  <%= @parkingevent.datetime %>
+</p>
+
+<p>
+  <strong>Parkallowed:</strong>
+  <%= @parkingevent.parkallowed %>
+</p>
+
+<p>
+  <strong>D:</strong>
+  <%= @parkingevent.d %>
+</p>
+
+<%= link_to 'Edit', edit_parkingevent_path(@parkingevent) %> |
+<%= link_to 'Back', parkingevents_path %>

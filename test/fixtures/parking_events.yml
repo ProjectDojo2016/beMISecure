@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  parkrequest: 2017-10-28 15:16:57
+  parkallowed: 2017-10-28 15:16:57
+  parkcompleted: MyString
+  datetime: MyString
+  getbikecompleted: MyString
+  datetime: MyString
+
+two:
+  parkrequest: 2017-10-28 15:16:57
+  parkallowed: 2017-10-28 15:16:57
+  parkcompleted: MyString
+  datetime: MyString
+  getbikecompleted: MyString
+  datetime: MyString
