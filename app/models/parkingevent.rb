@@ -1,2 +1,0 @@
-class Parkingevent < ApplicationRecord
-end

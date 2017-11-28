@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :phone_requests
   resources :parking_events
-  resources :parkingevents
   get 'home/welcome'
 
   devise_for :users

@@ -3,10 +3,9 @@ class CreateParkingEvents < ActiveRecord::Migration[5.0]
     create_table :parking_events do |t|
       t.datetime :parkrequest
       t.datetime :parkallowed
-      t.string :parkcompleted
-      t.string :datetime
-      t.string :getbikecompleted
-      t.string :datetime
+      t.datetime :parkcompleted
+      t.datetime :getbikerequest
+      t.datetime :getbikecompleted
 
       t.timestamps
     end

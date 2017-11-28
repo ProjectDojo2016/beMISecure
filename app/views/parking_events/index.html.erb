@@ -8,9 +8,8 @@
       <th>Parkrequest</th>
       <th>Parkallowed</th>
       <th>Parkcompleted</th>
-      <th>Datetime</th>
+      <th>Getbikerequest</th>
       <th>Getbikecompleted</th>
-      <th>Datetime</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,9 +20,8 @@
         <td><%= parking_event.parkrequest %></td>
         <td><%= parking_event.parkallowed %></td>
         <td><%= parking_event.parkcompleted %></td>
-        <td><%= parking_event.datetime %></td>
+        <td><%= parking_event.getbikerequest %></td>
         <td><%= parking_event.getbikecompleted %></td>
-        <td><%= parking_event.datetime %></td>
         <td><%= link_to 'Show', parking_event %></td>
         <td><%= link_to 'Edit', edit_parking_event_path(parking_event) %></td>
         <td><%= link_to 'Destroy', parking_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>

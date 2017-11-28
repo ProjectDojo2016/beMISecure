@@ -17,7 +17,7 @@ class ParkingEventsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create parking_event" do
     assert_difference('ParkingEvent.count') do
-      post parking_events_url, params: { parking_event: { datetime: @parking_event.datetime, datetime: @parking_event.datetime, getbikecompleted: @parking_event.getbikecompleted, parkallowed: @parking_event.parkallowed, parkcompleted: @parking_event.parkcompleted, parkrequest: @parking_event.parkrequest } }
+      post parking_events_url, params: { parking_event: { getbikecompleted: @parking_event.getbikecompleted, getbikerequest: @parking_event.getbikerequest, parkallowed: @parking_event.parkallowed, parkcompleted: @parking_event.parkcompleted, parkrequest: @parking_event.parkrequest } }
     end
 
     assert_redirected_to parking_event_url(ParkingEvent.last)
@@ -34,7 +34,7 @@ class ParkingEventsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update parking_event" do
-    patch parking_event_url(@parking_event), params: { parking_event: { datetime: @parking_event.datetime, datetime: @parking_event.datetime, getbikecompleted: @parking_event.getbikecompleted, parkallowed: @parking_event.parkallowed, parkcompleted: @parking_event.parkcompleted, parkrequest: @parking_event.parkrequest } }
+    patch parking_event_url(@parking_event), params: { parking_event: { getbikecompleted: @parking_event.getbikecompleted, getbikerequest: @parking_event.getbikerequest, parkallowed: @parking_event.parkallowed, parkcompleted: @parking_event.parkcompleted, parkrequest: @parking_event.parkrequest } }
     assert_redirected_to parking_event_url(@parking_event)
   end
 

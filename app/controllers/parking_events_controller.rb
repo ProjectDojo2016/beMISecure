@@ -69,6 +69,6 @@ class ParkingEventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def parking_event_params
-      params.require(:parking_event).permit(:parkrequest, :parkallowed, :parkcompleted, :datetime, :getbikecompleted, :datetime)
+      params.require(:parking_event).permit(:parkrequest, :parkallowed, :parkcompleted, :getbikerequest, :getbikecompleted)
     end
 end
