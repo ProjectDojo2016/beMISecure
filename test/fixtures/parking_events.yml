@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  parkrequest: 2017-10-28 15:14:22
+  parkallowed: 2017-10-28 15:14:22
+  parkcompleted: 2017-10-28 15:14:22
+  getbikerequest: 2017-10-28 15:14:22
+  getbikecomplited: 2017-10-28 15:14:22
+  id: 3
+  user_id: 3
+  chain_id: 3
+
+two:
+  parkrequest: 2017-10-28 15:14:22
+  parkallowed: 2017-10-28 15:14:22
+  parkcompleted: 2017-10-28 15:14:22                         
+  getbikerequest: 2017-10-28 15:14:22
+  getbikecomplited: 2017-10-28 15:14:22
+  id: 2
+  user_id: 3
+  chain_id: 3
+
+three:
+  parkrequest: 2017-10-28 15:14:22
+  parkallowed: 2017-10-28 15:14:22
+  parkcompleted: 2017-10-28 15:14:22
+  getbikerequest: 2017-10-28 15:14:22
+  getbikecomplited: 2017-10-28 15:14:22
+  id: 1
+  user_id: 3
+  chain_id: 3
+  
+four:
+  parkrequest: 2017-10-28 15:14:22
+  parkallowed: 2017-10-28 15:14:22
+  parkcompleted: 2017-10-28 15:14:22
+  id: 4
+  user_id: 3
+  chain_id: 4
+  
+five:
+  parkrequest: 2017-10-28 15:14:22
+  parkallowed: 2017-10-28 15:14:22
+  parkcompleted: 2017-10-28 15:14:22
+  id: 5
+  user_id: 1
+  chain_id: 5
+
+  
