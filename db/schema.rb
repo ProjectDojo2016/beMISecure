@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171128134755) do
+ActiveRecord::Schema.define(version: 20171202160316) do
 
   create_table "chains", force: :cascade do |t|
     t.string   "status"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20171128134755) do
     t.datetime "parkallowed"
     t.datetime "parkcompleted"
     t.datetime "getbikerequest"
+
     t.datetime "getbikecompleted"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
@@ -39,6 +40,9 @@ ActiveRecord::Schema.define(version: 20171128134755) do
     t.datetime "updated_at", null: false
     t.integer  "chain_id"
     t.integer  "user_id"
+
+    t.string   "response"
+
     t.index ["chain_id"], name: "index_phone_requests_on_chain_id"
     t.index ["user_id"], name: "index_phone_requests_on_user_id"
   end

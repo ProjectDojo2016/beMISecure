@@ -25,6 +25,34 @@ class PhoneRequestsController < ApplicationController
   # POST /phone_requests.json
   def create
     @phone_request = PhoneRequest.new(phone_request_params)
+    if phone_request.user.IsActive
+       permettoDiParcheggiare+=0
+       permettoDiRitirareLaBici+=0
+     else
+       permettoDiRitirareLaBici+=0
+     end
+     if phone_request.chain.IsFree
+       permettoDiParcheggiare+=0
+     else
+       permettoDiRitirareLaBici+=0
+     end
+     if phone_request.user.hasBikeParkedin?
+       permettoDiRitirareLaBici+=0
+     else
+       permettoDiParcheggiare+=0
+     end
+     
+     if permettoDiParcheggiare==3
+       parcheggio=ParkingEvent.new(:user=>@phone_request.user, :chain => @phone_requests.chain, :parkrequest => Time.now)
+        parcheggio.save
+     end
+    
+     if permettoDiRitirareLaBici ==3
+       
+       parcheggio = @phone_request.chain.parking_event.last
+       parcheggio.getbikerequest = Time.now
+     end
+       
 
     respond_to do |format|
       if @phone_request.save
