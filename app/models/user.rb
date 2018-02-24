@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
          has_many :parking_events
          has_many :phone_request
          
@@ -20,3 +21,4 @@ class User < ApplicationRecord
     end
 
 end
+

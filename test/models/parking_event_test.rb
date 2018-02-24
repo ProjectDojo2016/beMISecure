@@ -20,4 +20,5 @@ class ParkingEventTest < ActiveSupport::TestCase
     assert p.isCompleted? == true
   end 
   
+
 end
