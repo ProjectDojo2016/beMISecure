@@ -29,6 +29,12 @@ five:
   model: MyString
   securityLevel: 1
   id: 5
+  
+six:
+  status: MyString
+  model: MyString
+  securityLevel: 1
+  id: 6
 
 
   

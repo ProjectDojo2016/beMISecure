@@ -17,7 +17,7 @@ class PhoneRequestsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create phone_request" do
     assert_difference('PhoneRequest.count') do
-      post phone_requests_url, params: { phone_request: {  } }
+      post phone_request_url, params: {phone_request:{"user_id":1,"chain_id":6}}
     end
 
     assert_redirected_to phone_request_url(PhoneRequest.last)
@@ -45,4 +45,11 @@ class PhoneRequestsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to phone_requests_url
   end
+
+
+test "test8" do
+  assert_difference('ParkingEvent.count')do
+    post phone_request_url,params:{phone_request:{"user_id":1,"chain_id":6}}
+  end
+end
 end
