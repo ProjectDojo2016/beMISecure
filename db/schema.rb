@@ -25,11 +25,12 @@ ActiveRecord::Schema.define(version: 20171202160316) do
     t.datetime "parkallowed"
     t.datetime "parkcompleted"
     t.datetime "getbikerequest"
-    t.datetime "getbikecomplited"
+
+    t.datetime "getbikecompleted"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.integer  "user_id"
     t.integer  "chain_id"
+    t.integer  "user_id"
     t.index ["chain_id"], name: "index_parking_events_on_chain_id"
     t.index ["user_id"], name: "index_parking_events_on_user_id"
   end
@@ -39,7 +40,9 @@ ActiveRecord::Schema.define(version: 20171202160316) do
     t.datetime "updated_at", null: false
     t.integer  "chain_id"
     t.integer  "user_id"
+
     t.string   "response"
+
     t.index ["chain_id"], name: "index_phone_requests_on_chain_id"
     t.index ["user_id"], name: "index_phone_requests_on_user_id"
   end

@@ -25,8 +25,7 @@ class PhoneRequestsController < ApplicationController
   # POST /phone_requests.json
   def create
     @phone_request = PhoneRequest.new(phone_request_params)
-    
-     if phone_request.user.IsActive
+    if phone_request.user.IsActive
        permettoDiParcheggiare+=0
        permettoDiRitirareLaBici+=0
      else
@@ -54,7 +53,6 @@ class PhoneRequestsController < ApplicationController
        parcheggio.getbikerequest = Time.now
      end
        
-     
 
     respond_to do |format|
       if @phone_request.save
