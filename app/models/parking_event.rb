@@ -10,4 +10,5 @@ class ParkingEvent < ApplicationRecord
         end 
         
     end
+
 end

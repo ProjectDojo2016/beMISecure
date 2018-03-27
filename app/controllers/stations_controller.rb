@@ -11,6 +11,10 @@ class StationsController < ApplicationController
   # GET /stations/1.json
   def show
   end
+  
+  def my_commands
+    
+  end
 
   # GET /stations/new
   def new

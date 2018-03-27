@@ -25,7 +25,6 @@ class ParkingEventsController < ApplicationController
   # POST /parking_events.json
   def create
     @parking_event = ParkingEvent.new(parking_event_params)
-
     respond_to do |format|
       if @parking_event.save
         format.html { redirect_to @parking_event, notice: 'Parking event was successfully created.' }
@@ -69,7 +68,7 @@ class ParkingEventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def parking_event_params
-      params.require(:parking_event).permit(:parkrequest, :parkallowed, :parkcompleted, :getbikerequest, :getbikecomplited)
+      params.require(:parking_event).permit( :parkrequest, :parkallowed, :parkcompleted, :getbikerequest, :getbikecompleted)
 
     end
 end

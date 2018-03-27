@@ -35,7 +35,6 @@ class ParkingEventsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update parking_event" do
-
     patch parking_event_url(@parking_event), params: { parking_event: { getbikecompleted: @parking_event.getbikecompleted, getbikerequest: @parking_event.getbikerequest, parkallowed: @parking_event.parkallowed, parkcompleted: @parking_event.parkcompleted, parkrequest: @parking_event.parkrequest } }
 
     assert_redirected_to parking_event_url(@parking_event)

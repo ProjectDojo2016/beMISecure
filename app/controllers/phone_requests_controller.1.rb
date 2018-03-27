@@ -26,42 +26,51 @@ class PhoneRequestsController < ApplicationController
   def create
     @phone_request = PhoneRequest.new(phone_request_params)
     
-    permettoDiParcheggiare  = 0
-    permettoDiRitirareLaBici =0  
+    parcheggioDaCreare  = true
+    parcheggioDaAggiornare = false 
     
-    if @phone_request.user.isActive?
-      permettoDiParcheggiare += 1 
-      permettoDiRitirareLaBici += 1
-    else 
-      permettoDiRitirareLaBici += 1
+    if !@phone_request.user.isActive?
+      parcheggioDaCreare  = false 
+      @phone_request.response = "Paga prima di usare il servizio"
     end
     
-    if @phone_request.chain.isFree?
-      permettoDiParcheggiare += 1
-    else
-      permettoDiRitirareLaBici += 1
+    if !@phone_request.chain.isFree?
+      parcheggioDaCreare  = false 
+      parcheggioDaAggiornare = false  
+       @phone_request.response = "Settimo .. non rubare le bici degli altri"
     end
     
     if @phone_request.user.hasBikeParkedIn? @phone_request.chain
-      permettoDiRitirareLaBici += 1
-    else
-      permettoDiParcheggiare += 1
+      parcheggioDaCreare  = false 
+      parcheggioDaAggiornare = true  
+       @phone_request.response = "ricevuta richiesta di sblocco"
     end
     
     
-    if permettoDiParcheggiare == 3
+    if parcheggioDaCreare
     
       parcheggio = ParkingEvent.new(:user => @phone_request.user, :chain => @phone_request.chain, :parkrequest => Time.now)
-      parcheggio.save
+      if parcheggio.save
+        @phone_request.response = "Creato il parcheggio: " + parcheggio.id.to_s + " sulla catena: " + @phone_request.chain.id.to_s
+      else 
+         @phone_request.response = "si è verificato un errore durante il parcheggio "
+      end
+    
     end
     
-    if permettoDiRitirareLaBici == 3
+    if parcheggioDaAggiornare
     
       parcheggio = @phone_request.chain.parking_events.last
       parcheggio.getbikerequest = Time.now
-      parcheggio.save
-      
+      if parcheggio.save
+        @phone_request.response = "Ricevuta richiesta di sblocco del parcheggio: " + parcheggio.id.to_s + " sulla catena: " + @phone_request.chain.id.to_s
+      else 
+        @phone_request.response = "si è verificato un errore durante lo sblocco "
+      end
+    
     end    
+    
+    
     
     respond_to do |format|
       if @phone_request.save
@@ -106,9 +115,8 @@ class PhoneRequestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def phone_request_params
-
       #params.fetch(:phone_request, {})
-       params.require(:phone_request).permit(:user_id, :chain_id)
+      params.require(:phone_request).permit(:user_id, :chain_id)
 
     end
 end

@@ -4,21 +4,13 @@ class ParkingEventTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
-  
- test "ciao" do
-    p= ParkingEvent.find(3)
-    assert p.isCompleted? == true
-  end 
-  
- test "ciao2" do
-    p= ParkingEvent.find(2)
-    assert p.isCompleted? == true
-  end 
-  
-  test "ciao3" do
-    p= ParkingEvent.find(1)
-    assert p.isCompleted? == true
-  end 
-  
+  test "parcheggio completato" do
+    parcheggio = ParkingEvent.find(1)
+    assert parcheggio.isCompleted?
+    
+    parcheggio2 = ParkingEvent.find(3)
+    assert_not parcheggio2.isCompleted?
+    
+  end
 
 end
