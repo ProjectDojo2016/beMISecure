@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170330210506) do
+ActiveRecord::Schema.define(version: 20180317163034) do
 
   create_table "chains", force: :cascade do |t|
     t.string   "status"
@@ -18,6 +18,39 @@ ActiveRecord::Schema.define(version: 20170330210506) do
     t.integer  "securityLevel"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "station_id"
+    t.index ["station_id"], name: "index_chains_on_station_id"
+  end
+
+  create_table "commands", force: :cascade do |t|
+    t.string   "azione"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.         "reference"
+  end
+
+  create_table "parking_events", force: :cascade do |t|
+    t.datetime "parkrequest"
+    t.datetime "parkallowed"
+    t.datetime "parkcompleted"
+    t.datetime "getbikerequest"
+    t.datetime "getbikecompleted"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "user_id"
+    t.integer  "chain_id"
+    t.index ["chain_id"], name: "index_parking_events_on_chain_id"
+    t.index ["user_id"], name: "index_parking_events_on_user_id"
+  end
+
+  create_table "phone_requests", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "chain_id"
+    t.integer  "user_id"
+    t.string   "response"
+    t.index ["chain_id"], name: "index_phone_requests_on_chain_id"
+    t.index ["user_id"], name: "index_phone_requests_on_user_id"
   end
 
   create_table "stations", force: :cascade do |t|

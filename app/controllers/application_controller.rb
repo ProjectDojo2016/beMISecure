@@ -3,6 +3,11 @@ class ApplicationController < ActionController::Base
   
   
     before_filter :configure_permitted_parameters, if: :devise_controller?
+    skip_before_filter :verify_authenticity_token, if: :json_request?
+
+    def json_request?
+      request.format.json?
+    end
 
     protected
 
