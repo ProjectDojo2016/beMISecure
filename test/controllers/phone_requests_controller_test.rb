@@ -34,7 +34,7 @@ class PhoneRequestsControllerTest < ActionDispatch::IntegrationTest
 
   test "failed request new parking" do
     assert_no_difference('ParkingEvent.count') do
-      post phone_requests_url, params: { phone_request: {"user_id":2,"chain_id":2  } }
+      post phone_requests_url, params: { phone_request: {"user_id":2,"chain_id":2  } 
     end
 
    # assert PhoneRequest.last.response == "Parcheggio occupato da altro utente o utente non attivo"
@@ -72,4 +72,11 @@ class PhoneRequestsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to phone_requests_url
   end
+
+
+test "test8" do
+  assert_difference('ParkingEvent.count')do
+    post phone_request_url,params:{phone_request:{"user_id":1,"chain_id":6}}
+  end
+end
 end
