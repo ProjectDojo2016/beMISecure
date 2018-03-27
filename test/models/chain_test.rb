@@ -1,5 +1,4 @@
 require 'test_helper'
-
 class ChainTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
@@ -15,5 +14,6 @@ class ChainTest < ActiveSupport::TestCase
      catena4 = Chain.find(1)
      assert_not catena4.isFree?, "la catena 1 non è libera"
   end
-  
+
 end
+  

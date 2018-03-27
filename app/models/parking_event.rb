@@ -10,14 +10,5 @@ class ParkingEvent < ApplicationRecord
         end 
         
     end
-    
-    def hasBikeLockedIn?
-        if self.parkcompleted and !self.getbikecompleted
-            return true
-        else
-            return false
-        end 
-    end
-    
-    
+
 end

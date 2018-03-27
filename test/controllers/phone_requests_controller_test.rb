@@ -63,10 +63,7 @@ class PhoneRequestsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-#  test "should update phone_request" do
-#    patch phone_request_url(@phone_request), params: { phone_request: {  } }
-#    assert_redirected_to phone_request_url(@phone_request)
-#  end
+
 
   test "should destroy phone_request" do
     assert_difference('PhoneRequest.count', -1) do

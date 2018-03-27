@@ -106,7 +106,9 @@ class PhoneRequestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def phone_request_params
+
       #params.fetch(:phone_request, {})
        params.require(:phone_request).permit(:user_id, :chain_id)
+
     end
 end
