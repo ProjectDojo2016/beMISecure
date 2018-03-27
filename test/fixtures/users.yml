@@ -1,10 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: enrico
-  surname: vasaio
+  name: Cristina
+  surname: Giliberti
   birthdate: 2017-01-14
-  phonenumber: 6666666666
-  email: yourMother@gmail.com
-  password: password
+  phonenumber: MyString
+  email: a@a.it
+  password: MyString
   id: 1
+
+two:
+  name: Mario
+  surname: Polito
+  birthdate: 2017-01-14
+  phonenumber: MyString
+  email: b@b.it
+  password: MyString
+  id: 2
