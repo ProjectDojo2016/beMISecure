@@ -22,3 +22,6 @@
 
 #ignore migrations
 /db/migrate/*
+
+#ignore app_old
+/app_old/*
