@@ -1,0 +1,1 @@
+json.array! @cmd_arr, partial: 'commands/command', as: :command

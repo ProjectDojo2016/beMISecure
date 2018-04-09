@@ -19,3 +19,9 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+#ignore migrations
+/db/migrate/*
+
+#ignore app_old
+/app_old/*

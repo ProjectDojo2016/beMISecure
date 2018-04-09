@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180317163034) do
+ActiveRecord::Schema.define(version: 20180409124429) do
 
 
   create_table "chains", force: :cascade do |t|
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20180317163034) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.         "reference"
+    t.integer  "chain_id"
+    t.index ["chain_id"], name: "index_commands_on_chain_id"
   end
 
   create_table "parking_events", force: :cascade do |t|

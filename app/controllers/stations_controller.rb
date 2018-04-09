@@ -1,5 +1,5 @@
 class StationsController < ApplicationController
-  before_action :set_station, only: [:show, :edit, :update, :destroy]
+  before_action :set_station, only: [:show, :edit, :update, :destroy, :my_commands]
 
   # GET /stations
   # GET /stations.json
@@ -13,7 +13,9 @@ class StationsController < ApplicationController
   end
   
   def my_commands
-    
+    @cmd_arr = @station.chains.includes(:commands).map do  |chnCom|
+      chnCom.commands.last
+    end
   end
 
   # GET /stations/new

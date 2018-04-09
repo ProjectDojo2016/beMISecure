@@ -52,16 +52,21 @@ class PhoneRequestsController < ApplicationController
     if permettoDiParcheggiare == 3
     
       parcheggio = ParkingEvent.new(:user => @phone_request.user, :chain => @phone_request.chain, :parkrequest => Time.now)
+      comando = Command.new(:azione => "open", :chain => @phone_request.chain)
       parcheggio.save
+      comando.save
+      
     end
     
     if permettoDiRitirareLaBici == 3
     
       parcheggio = @phone_request.chain.parking_events.last
       parcheggio.getbikerequest = Time.now
+      comando = Command.new(:azione => "open", :chain => @phone_request.chain)
+      comando.save
       parcheggio.save
       
-    end    
+    end
     
     respond_to do |format|
       if @phone_request.save
