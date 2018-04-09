@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @chain.status %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @chain.model %>
+</p>
+
+<p>
+  <strong>Securitylevel:</strong>
+  <%= @chain.securityLevel %>
+</p>
+
+<%= link_to 'Edit', edit_chain_path(@chain) %> |
+<%= link_to 'Back', chains_path %>

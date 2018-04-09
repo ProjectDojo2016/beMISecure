@@ -52,16 +52,21 @@ class PhoneRequestsController < ApplicationController
     if permettoDiParcheggiare == 3
     
       parcheggio = ParkingEvent.new(:user => @phone_request.user, :chain => @phone_request.chain, :parkrequest => Time.now)
+      comando = Command.new(:azione => "open", :chain => @phone_request.chain)
       parcheggio.save
+      comando.save
+      
     end
     
     if permettoDiRitirareLaBici == 3
     
       parcheggio = @phone_request.chain.parking_events.last
       parcheggio.getbikerequest = Time.now
+      comando = Command.new(:azione => "open", :chain => @phone_request.chain)
+      comando.save
       parcheggio.save
       
-    end    
+    end
     
     respond_to do |format|
       if @phone_request.save
@@ -106,7 +111,9 @@ class PhoneRequestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def phone_request_params
+
       #params.fetch(:phone_request, {})
        params.require(:phone_request).permit(:user_id, :chain_id)
+
     end
 end

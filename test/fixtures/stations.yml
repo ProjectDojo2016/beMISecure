@@ -8,6 +8,7 @@ one:
   station_name: MyString
   lockers: 1
   security: 1
+  id: 1
 
 two:
   position: 1
@@ -17,3 +18,4 @@ two:
   station_name: MyString
   lockers: 1
   security: 1
+  id: 2

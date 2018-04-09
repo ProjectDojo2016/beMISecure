@@ -61,6 +61,8 @@ class CommandsController < ApplicationController
     end
   end
 
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_command
@@ -71,4 +73,7 @@ class CommandsController < ApplicationController
     def command_params
       params.require(:command).permit(:azione)
     end
+    
+
 end
+

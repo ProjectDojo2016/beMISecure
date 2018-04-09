@@ -19,6 +19,8 @@ class PhoneRequestsControllerTest < ActionDispatch::IntegrationTest
     assert_difference('ParkingEvent.count') do
       post phone_requests_url, params: { phone_request: {"user_id":1,"chain_id":4  } }
     end
+    assert Command.all.last.chain_id == 4
+
     
 #    assert_redirected_to phone_request_url(PhoneRequest.last)
   end
@@ -27,7 +29,8 @@ class PhoneRequestsControllerTest < ActionDispatch::IntegrationTest
     assert_difference('ParkingEvent.count') do
       post phone_requests_url, params: { phone_request: {"user_id":1,"chain_id":3  } }
     end
-    
+    assert Command.all.last.chain_id == 3
+
 #    assert_redirected_to phone_request_url(PhoneRequest.last)
   end
 
@@ -43,12 +46,15 @@ class PhoneRequestsControllerTest < ActionDispatch::IntegrationTest
 
   test "update parking" do
     assert_no_difference('ParkingEvent.count') do
-      post phone_requests_url, params: { phone_request: {"user_id":1,"chain_id":2  } }
+      assert_difference('Command.count') do
+        post phone_requests_url, params: { phone_request: {"user_id":1,"chain_id":2  } }
+      end
     end
     
     assert_not ParkingEvent.find(3).getbikerequest.nil?
     assert ParkingEvent.find(3).getbikecompleted.nil?
     assert_redirected_to phone_request_url(PhoneRequest.last)
+    assert Command.all.last.chain_id == 2
     
   end
 

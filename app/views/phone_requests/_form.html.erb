@@ -10,7 +10,14 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="field">
+    <%= f.label "utente" %>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label "catena" %>
+    <%= f.number_field :chain_id %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

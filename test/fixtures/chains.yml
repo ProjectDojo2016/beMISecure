@@ -4,12 +4,14 @@ one:
   status: MyString
   model: MyString
   securityLevel: 1
+  station_id: 1
   id: 1
 
 two:
   status: MyString
   model: MyString
   securityLevel: 1
+  station_id: 1
   id: 2
 
 three:
