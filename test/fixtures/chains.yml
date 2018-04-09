@@ -11,14 +11,9 @@ two:
   status: MyString
   model: MyString
   securityLevel: 1
-<<<<<<< HEAD
   station_id: 1
   id: 2
 
-=======
-  id: 3
-  
->>>>>>> d520d55045af21722eebdb873ceb9672a453bce8
 three:
   status: MyString
   model: MyString
