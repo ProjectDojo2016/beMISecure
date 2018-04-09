@@ -12,4 +12,5 @@ class ParkingEventTest < ActiveSupport::TestCase
     assert_not parcheggio2.isCompleted?
     
   end
+
 end

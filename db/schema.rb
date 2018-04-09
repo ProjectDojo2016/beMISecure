@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20180409124429) do
 
+
   create_table "chains", force: :cascade do |t|
     t.string   "status"
     t.string   "model"
@@ -51,6 +52,33 @@ ActiveRecord::Schema.define(version: 20180409124429) do
     t.integer  "chain_id"
     t.integer  "user_id"
     t.string   "response"
+    t.index ["chain_id"], name: "index_phone_requests_on_chain_id"
+    t.index ["user_id"], name: "index_phone_requests_on_user_id"
+  end
+
+  create_table "parking_events", force: :cascade do |t|
+    t.datetime "parkrequest"
+    t.datetime "parkallowed"
+    t.datetime "parkcompleted"
+    t.datetime "getbikerequest"
+
+    t.datetime "getbikecompleted"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "chain_id"
+    t.integer  "user_id"
+    t.index ["chain_id"], name: "index_parking_events_on_chain_id"
+    t.index ["user_id"], name: "index_parking_events_on_user_id"
+  end
+
+  create_table "phone_requests", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "chain_id"
+    t.integer  "user_id"
+
+    t.string   "response"
+
     t.index ["chain_id"], name: "index_phone_requests_on_chain_id"
     t.index ["user_id"], name: "index_phone_requests_on_user_id"
   end
