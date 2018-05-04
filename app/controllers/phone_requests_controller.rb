@@ -25,7 +25,9 @@ class PhoneRequestsController < ApplicationController
   # POST /phone_requests.json
   def create
     @phone_request = PhoneRequest.new(phone_request_params)
-    
+   
+    @phone_request.response = "Parcheggio occupato da altra bicicletta o utente non attivo"
+
     permettoDiParcheggiare  = 0
     permettoDiRitirareLaBici =0  
     
@@ -50,7 +52,7 @@ class PhoneRequestsController < ApplicationController
     
     
     if permettoDiParcheggiare == 3
-    
+      @phone_request.response = "Richiesta di nuovo parcheggio ricevuta correttamente"
       parcheggio = ParkingEvent.new(:user => @phone_request.user, :chain => @phone_request.chain, :parkrequest => Time.now)
       comando = Command.new(:azione => "open", :chain => @phone_request.chain)
       parcheggio.save
@@ -59,7 +61,8 @@ class PhoneRequestsController < ApplicationController
     end
     
     if permettoDiRitirareLaBici == 3
-    
+      
+      @phone_request.response = "Richiesta di ritiro bici ricevuta correttamente"
       parcheggio = @phone_request.chain.parking_events.last
       parcheggio.getbikerequest = Time.now
       comando = Command.new(:azione => "open", :chain => @phone_request.chain)
@@ -113,7 +116,7 @@ class PhoneRequestsController < ApplicationController
     def phone_request_params
 
       #params.fetch(:phone_request, {})
-       params.require(:phone_request).permit(:user_id, :chain_id)
+      params.require(:phone_request).permit(:user_id, :chain_id)
 
     end
 end

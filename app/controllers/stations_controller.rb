@@ -13,9 +13,15 @@ class StationsController < ApplicationController
   end
   
   def my_commands
-    @cmd_arr = @station.chains.includes(:commands).map do  |chnCom|
-      chnCom.commands.last
+    #@cmd_arr = @station.chains.includes(:commands).map do  |chnCom|
+    #  chnCom.commands.last
+    #end
+    
+    @cmd_arr = Array.new
+    @station.chains.all.each do |catena|
+      @cmd_arr.push catena.commands.last
     end
+    
   end
 
   # GET /stations/new
