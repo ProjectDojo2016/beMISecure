@@ -1,0 +1,22 @@
+<%= form_for(station_feedback) do |f| %>
+  <% if station_feedback.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(station_feedback.errors.count, "error") %> prohibited this station_feedback from being saved:</h2>
+
+      <ul>
+      <% station_feedback.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :azione %>
+    <%= f.text_field :azione %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

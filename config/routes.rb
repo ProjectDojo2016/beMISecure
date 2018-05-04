@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :station_feedbacks
   resources :commands
   resources :phone_requests
   resources :parking_events
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
   resources :stations
+  
   get 'stations/:id/my_commands', to: "stations#my_commands", as: "my_commands"
   resources :chains
   root "home#welcome"
